@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "2cd8afc0-c1e6-43d7-bb1a-e121a947c29c",
+		"name": "pqrsUts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7819792"
+	},
+	"item": [
+		{
+			"name": "getPqrs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pqrs-activas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pqrs-activas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "postPqrs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_radicado\": {\r\n        \"asunto\": \"Peticion por perdida de articulo\",\r\n        \"descripcion\": \"Se me perdio el articulo se perdio el dia 02 del mes 06 del año 2014\"\r\n    },\r\n    \"_propietario\": {\r\n        \"nombres\": \"Tom\",\r\n        \"apellidos\": \"Cruz\",\r\n        \"dni\": \"1458963\",\r\n        \"email\": \"tomcruz@gmail.com\",\r\n        \"contacto\": \"3504284093\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/pqrs-crear",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pqrs-crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "editPqrs",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pqrs-estado?id=1730322305",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pqrs-estado"
+					],
+					"query": [
+						{
+							"key": "id",
+							"value": "1730322305"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getNroRadicadoPqrs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pqrs-detalle?_nroRadicado=1730327098",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pqrs-detalle"
+					],
+					"query": [
+						{
+							"key": "_nroRadicado",
+							"value": "1730327098"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDniPqrs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pqrs-mis-pqrs?_dni=1458963",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pqrs-mis-pqrs"
+					],
+					"query": [
+						{
+							"key": "_dni",
+							"value": "1458963"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "putEstadoRadicado",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/pqrs-estado?_nroRadicado=1730326330&_estado=1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"pqrs-estado"
+					],
+					"query": [
+						{
+							"key": "_nroRadicado",
+							"value": "1730326330"
+						},
+						{
+							"key": "_estado",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
