@@ -65,7 +65,15 @@ const pqrsController = {
     
     // almaceno en el objeto el numero de radicado "fecha del sistema en timestapp"
     data._nroRadicado = pqrsGlobales.getFecha(1)
-    data.estado = 3
+    data._estado = 3
+    hora_actualizacion = pqrsGlobales.getFecha(2)
+    data._trazabilidad = [
+      {
+        "estado": 1,
+        "actualizacion": hora_actualizacion,
+        "respuesta": `Se crea la solicitud no ${pqrsGlobales.getFecha(1)}`
+      }
+    ]
 
     // pucheo al arreglo general las peticiones
     dataPeticion.push(data)
@@ -91,8 +99,20 @@ const pqrsController = {
   
   },
   
-  updateEstado: (data) => {
+  updateEstado: (req, data) => {
     busqueda = dataPeticion.find((obj) => obj._nroRadicado == data._nroRadicado)
+
+    hora_actualizacion = pqrsGlobales.getFecha(2)
+    estadoTrazabilidad = {
+      "estado": parseInt(data._estado),
+      "actualizacion": hora_actualizacion,
+      "respuesta": req._trazabilidad.respuesta
+    }
+
+    if(busqueda._trazabilidad) {
+      busqueda._trazabilidad.push(estadoTrazabilidad)
+    }
+
     if(busqueda){
       busqueda.estado = parseInt(data._estado)
       response = {

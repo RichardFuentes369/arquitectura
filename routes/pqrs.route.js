@@ -63,7 +63,7 @@ router.put('/pqrs-estado', (req, res) => {
     "_estado": _estado
   }
 
-  const listaPeticiones = pqrsController.updateEstado(data)
+  const listaPeticiones = pqrsController.updateEstado(req.body, data)
 
   res.send(`
     ${

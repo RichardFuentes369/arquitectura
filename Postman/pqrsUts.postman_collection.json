@@ -32,7 +32,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"_radicado\": {\r\n        \"asunto\": \"Peticion por perdida de articulo\",\r\n        \"descripcion\": \"Se me perdio el articulo se perdio el dia 02 del mes 06 del año 2014\"\r\n    },\r\n    \"_propietario\": {\r\n        \"nombres\": \"Tom\",\r\n        \"apellidos\": \"Cruz\",\r\n        \"dni\": \"1458963\",\r\n        \"email\": \"tomcruz@gmail.com\",\r\n        \"contacto\": \"3504284093\"\r\n    }\r\n}",
+					"raw": "{\r\n    \"_radicado\": {\r\n        \"asunto\": \"Peticion por perdida de articulo\",\r\n        \"descripcion\": \"Se me perdio el articulo se perdio el dia 02 del mes 06 del año 2014\"\r\n    },\r\n    \"_propietario\": {\r\n        \"nombres\": \"Tom\",\r\n        \"apellidos\": \"Cruz\",\r\n        \"dni\": \"1245879\",\r\n        \"email\": \"tom.cruz@gmail.com\",\r\n        \"contacto\": \"3504284093\"\r\n    }\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -54,37 +54,12 @@
 			"response": []
 		},
 		{
-			"name": "editPqrs",
-			"request": {
-				"method": "PUT",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:3000/pqrs-estado?id=1730322305",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "3000",
-					"path": [
-						"pqrs-estado"
-					],
-					"query": [
-						{
-							"key": "id",
-							"value": "1730322305"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "getNroRadicadoPqrs",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/pqrs-detalle?_nroRadicado=1730327098",
+					"raw": "http://localhost:3000/pqrs-detalle?_nroRadicado=1730492758",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -96,7 +71,7 @@
 					"query": [
 						{
 							"key": "_nroRadicado",
-							"value": "1730327098"
+							"value": "1730492758"
 						}
 					]
 				}
@@ -109,7 +84,7 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:3000/pqrs-mis-pqrs?_dni=1458963",
+					"raw": "http://localhost:3000/pqrs-mis-pqrs?_dni=2563489",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -121,7 +96,7 @@
 					"query": [
 						{
 							"key": "_dni",
-							"value": "1458963"
+							"value": "2563489"
 						}
 					]
 				}
@@ -133,8 +108,17 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"_trazabilidad\": {\r\n        \"respuesta\": \"Entregado\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "http://localhost:3000/pqrs-estado?_nroRadicado=1730326330&_estado=1",
+					"raw": "http://localhost:3000/pqrs-estado?_nroRadicado=1730492758&_estado=5",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -146,11 +130,11 @@
 					"query": [
 						{
 							"key": "_nroRadicado",
-							"value": "1730326330"
+							"value": "1730492758"
 						},
 						{
 							"key": "_estado",
-							"value": "1"
+							"value": "5"
 						}
 					]
 				}
